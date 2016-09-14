@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ProfileDetail from './components/ProfileDetail'
+import Profile from './components/Profile'
 
 ReactDOM.render(
-  <ProfileDetail />
+  <Profile />
 , document.getElementById('root'))
