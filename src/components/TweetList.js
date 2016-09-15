@@ -3,8 +3,8 @@ import Tweet from './Tweet'
 
 class TweetList extends React.Component {
   render() {
-    const tweets = this.props.tweets.map(tweet =>
-      <Tweet key={tweet.id} {...tweet} />
+    const tweets = this.props.tweets.map((tweet, index) =>
+      <Tweet key={tweet.id} {...tweet} firstItem={index === 0} />
     )
 
     return (

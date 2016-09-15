@@ -1,5 +1,5 @@
 import React from 'react'
-import { expect, shallow } from '../test-helper'
+import { expect, mount } from '../test-helper'
 import TweetList from '../../src/components/TweetList'
 import Tweet from '../../src/components/Tweet'
 
@@ -15,7 +15,7 @@ describe('TweetList', () => {
         { id: 3, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I like pop music' },
       ],
     }
-    wrapper = shallow(<TweetList {...props} />)
+    wrapper = mount(<TweetList {...props} />)
   })
 
   it('renders correct structure', () => {
@@ -25,5 +25,9 @@ describe('TweetList', () => {
 
   it('show tweets', () => {
     expect(wrapper).to.have.exactly(3).descendants(Tweet)
+  })
+
+  it('has first-item class for first tweet', () => {
+    expect(wrapper.find('Tweet').at(0)).to.have.className('first-item')
   })
 })

@@ -31,6 +31,7 @@
   "homepage": "https://github.com/codesheepio/twitter-clone-react-redux#readme",
   "dependencies": {
     "bootstrap-sass": "^3.3.7",
+    "classnames": "^2.2.5",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
   },
