@@ -21,7 +21,7 @@ describe('MainPanel', () => {
   it('renders correct structure', () => {
     expect(wrapper).to.have.tagName('div')
     expect(wrapper).to.have.className('main-panel')
-    expect(wrapper.find('TweetList')).to.be.present()
+    expect(wrapper).to.have.descendants('TweetList')
   })
 
   it('passes tweets props to TweetList component', () => {
