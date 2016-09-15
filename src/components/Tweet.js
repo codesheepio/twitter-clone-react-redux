@@ -21,7 +21,7 @@ Tweet.propTypes = {
   name: React.PropTypes.string.isRequired,
   screenName: React.PropTypes.string.isRequired,
   tweetText: React.PropTypes.string.isRequired,
-  firstItem: React.PropTypes.boolean,
+  firstItem: React.PropTypes.bool,
 }
 
 export default Tweet
