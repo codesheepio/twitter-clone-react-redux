@@ -1,6 +1,5 @@
 import React from 'react'
-import LeftPanel from './LeftPanel'
-import MainPanel from './MainPanel'
+import BodyContainer from './BodyContainer'
 
 class App extends React.Component {
   constructor(props) {
@@ -17,8 +16,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <LeftPanel />
-        <MainPanel tweets={this.state.tweets} />
+        <BodyContainer tweets={this.state.tweets} />
       </div>
     )
   }
