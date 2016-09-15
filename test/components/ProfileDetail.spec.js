@@ -1,10 +1,6 @@
 import React from 'react'
-import chai, { expect } from 'chai'
-import { shallow } from 'enzyme'
-import chaiEnzyme from 'chai-enzyme'
+import { expect, shallow } from '../test-helper'
 import ProfileDetail from '../../src/components/ProfileDetail'
-
-chai.use(chaiEnzyme())
 
 describe('ProfileDetail', () => {
   let wrapper
