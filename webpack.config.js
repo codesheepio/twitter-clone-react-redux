@@ -14,6 +14,15 @@ module.exports = {
         exclude: /node_modules/,
         loaders: ['babel'],
       },
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        loaders: ['style', 'css', 'sass'],
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url',
+      },
     ],
   },
   devServer: {
