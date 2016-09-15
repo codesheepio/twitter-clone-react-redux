@@ -7,9 +7,9 @@ class App extends React.Component {
     super(props)
     this.state = {
       tweets: [
-        { id: 1, name: 'Arnupharp Viratanapanu', screenName: 'topscores', text: 'Hello World' },
-        { id: 2, name: 'Arnupharp Viratanapanu', screenName: 'topscores', text: 'I am handsome' },
-        { id: 3, name: 'Arnupharp Viratanapanu', screenName: 'topscores', text: 'I like pop music' },
+        { id: 1, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'Hello World' },
+        { id: 2, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I am handsome' },
+        { id: 3, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I like pop music' },
       ],
     }
   }
