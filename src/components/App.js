@@ -5,6 +5,11 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      name: 'Arnupharp Viratanapanu',
+      screenName: 'topscores',
+      numTweets: 3,
+      numFollowers: 12,
+      numFollowings: 20,
       tweets: [
         { id: 1, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'Hello World' },
         { id: 2, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I am handsome' },
@@ -16,7 +21,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <BodyContainer tweets={this.state.tweets} />
+        <BodyContainer {...this.state} />
       </div>
     )
   }

@@ -4,9 +4,14 @@ import ProfileHeader from '../../src/components/ProfileHeader'
 
 describe('ProfileHeader', () => {
   let wrapper
+  let props
 
   beforeEach(() => {
-    wrapper = shallow(<ProfileHeader />)
+    props = {
+      name: 'Supasate Choochaisri',
+      screenName: 'kaizerwing',
+    }
+    wrapper = shallow(<ProfileHeader {...props} />)
   })
 
   it('renders correct structure', () => {

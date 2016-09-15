@@ -4,9 +4,15 @@ import ProfileDetail from '../../src/components/ProfileDetail'
 
 describe('ProfileDetail', () => {
   let wrapper
+  let props
 
   beforeEach(() => {
-    wrapper = shallow(<ProfileDetail />)
+    props = {
+      numTweets: 1337,
+      numFollowers: 500,
+      numFollowings: 700,
+    }
+    wrapper = shallow(<ProfileDetail {...props} />)
   })
 
   it('render correct structure', () => {

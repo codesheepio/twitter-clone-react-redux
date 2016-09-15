@@ -6,19 +6,25 @@ class ProfileDetail extends React.Component {
       <div className="detail last-section">
         <div className="col">
           <div className="text">Tweets</div>
-          <div className="number">327</div>
+          <div className="number">{this.props.numTweets}</div>
         </div>
         <div className="col">
           <div className="text">Followers</div>
-          <div className="number">163</div>
+          <div className="number">{this.props.numFollowers}</div>
         </div>
         <div className="col">
-          <div className="text">Following</div>
-          <div className="number">500</div>
+          <div className="text">Followings</div>
+          <div className="number">{this.props.numFollowings}</div>
         </div>
       </div>
     )
   }
+}
+
+ProfileDetail.propTypes = {
+  numTweets: React.PropTypes.number.isRequired,
+  numFollowers: React.PropTypes.number.isRequired,
+  numFollowings: React.PropTypes.number.isRequired,
 }
 
 export default ProfileDetail
