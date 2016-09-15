@@ -1,6 +1,6 @@
 import React from 'react'
 import Profile from './Profile'
-import TweetList from './TweetList'
+import MainPanel from './MainPanel'
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class App extends React.Component {
     return (
       <div>
         <Profile />
-        <TweetList tweets={this.state.tweets} />
+        <MainPanel tweets={this.state.tweets} />
       </div>
     )
   }
