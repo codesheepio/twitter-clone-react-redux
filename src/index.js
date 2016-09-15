@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Profile from './components/Profile'
+import App from './components/App'
 
 ReactDOM.render(
-  <Profile />
+  <App />
 , document.getElementById('root'))
