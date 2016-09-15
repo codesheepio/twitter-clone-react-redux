@@ -1,5 +1,5 @@
 import React from 'react'
-import Profile from './Profile'
+import LeftPanel from './LeftPanel'
 import MainPanel from './MainPanel'
 
 class App extends React.Component {
@@ -17,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Profile />
+        <LeftPanel />
         <MainPanel tweets={this.state.tweets} />
       </div>
     )
