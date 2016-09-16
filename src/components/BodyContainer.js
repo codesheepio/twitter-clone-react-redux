@@ -7,14 +7,10 @@ class BodyContainer extends React.Component {
     return (
       <div className="container body">
         <LeftPanel {...this.props} />
-        <MainPanel tweets={this.props.tweets} />
+        <MainPanel />
       </div>
     )
   }
-}
-
-BodyContainer.propTypes = {
-  tweets: React.PropTypes.arrayOf(React.PropTypes.object),
 }
 
 export default BodyContainer

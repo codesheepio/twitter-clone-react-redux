@@ -1,30 +1,23 @@
 import React from 'react'
-import { expect, shallow } from '../test-helper'
+import { expect, reduxMount } from '../test-helper'
 import BodyContainer from '../../src/components/BodyContainer'
 
 describe('BodyContainer', () => {
   let wrapper
-  let props
+  let state
 
   beforeEach(() => {
-    props = {
-      tweets: [
-        { id: 1, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'Hello World' },
-        { id: 2, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I am handsome' },
-        { id: 3, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I like pop music' },
-      ],
+    state = {
+      tweetList: [],
     }
-    wrapper = shallow(<BodyContainer {...props} />)
+    wrapper = reduxMount(<BodyContainer />, state)
   })
 
   it('renders correct structure', () => {
     expect(wrapper).to.have.tagName('div')
-    expect(wrapper).to.have.className('container body')
+    expect(wrapper).to.have.className('container')
+    expect(wrapper).to.have.className('body')
     expect(wrapper).to.have.descendants('LeftPanel')
     expect(wrapper).to.have.descendants('MainPanel')
-  })
-
-  it('passes tweets to MainPanel via props', () => {
-    expect(wrapper.find('MainPanel')).to.have.prop('tweets', props.tweets)
   })
 })
