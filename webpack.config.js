@@ -1,8 +1,12 @@
 const path = require('path')
+const webpack = require('webpack') // eslint-disable-line import/no-extraneous-dependencies
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.join(__dirname, 'src', 'index.js'),
+  entry: [
+    'webpack/hot/only-dev-server',
+    path.join(__dirname, 'src', 'index.js'),
+  ],
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/dist/',
@@ -13,7 +17,7 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ['babel'],
+        loaders: ['babel', 'webpack-module-hot-accept'],
       },
       {
         test: /\.scss$/,
@@ -26,7 +30,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+  ],
   devServer: {
     inline: true,
+    hot: true,
   },
 }
