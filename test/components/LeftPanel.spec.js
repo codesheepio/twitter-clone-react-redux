@@ -1,12 +1,22 @@
 import React from 'react'
-import { expect, shallow } from '../test-helper'
+import { expect, reduxMount } from '../test-helper'
 import LeftPanel from '../../src/components/LeftPanel'
 
 describe('LeftPanel', () => {
   let wrapper
+  let state
 
   beforeEach(() => {
-    wrapper = shallow(<LeftPanel />)
+    state = {
+      profile: {
+        name: 'Supasate Choochaisri',
+        screenName: 'kaizerwing',
+        numTweets: 1337,
+        numFollowers: 500,
+        numFollowings: 700,
+      },
+    }
+    wrapper = reduxMount(<LeftPanel />, state)
   })
 
   it('renders correct structure', () => {

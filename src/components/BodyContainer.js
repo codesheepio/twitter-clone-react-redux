@@ -6,7 +6,7 @@ class BodyContainer extends React.Component {
   render() {
     return (
       <div className="container body">
-        <LeftPanel {...this.props} />
+        <LeftPanel />
         <MainPanel />
       </div>
     )

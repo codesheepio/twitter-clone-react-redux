@@ -1,11 +1,11 @@
 import React from 'react'
-import Profile from './Profile'
+import Profile from '../containers/Profile'
 
 class LeftPanel extends React.Component {
   render() {
     return (
       <div className="left-panel">
-        <Profile {...this.props} />
+        <Profile />
       </div>
     )
   }
