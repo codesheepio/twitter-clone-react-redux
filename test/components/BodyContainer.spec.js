@@ -8,7 +8,13 @@ describe('BodyContainer', () => {
 
   beforeEach(() => {
     state = {
-      profile: {},
+      profile: {
+        name: '',
+        screenName: '',
+        numTweets: 0,
+        numFollowers: 0,
+        numFollowings: 0,
+      },
       tweetList: [],
     }
     wrapper = reduxMount(<BodyContainer />, state)
