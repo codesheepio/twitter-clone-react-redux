@@ -11,8 +11,8 @@
     "clean": "rm -rf ./dist",
     "lint": "eslint .",
     "start": "webpack-dev-server",
-    "test": "mocha --compilers js:babel-register --recursive",
-    "test:watch": "npm test -- --watch"
+    "test": "mocha --compilers js:babel-register --recursive && npm run lint",
+    "test:watch": "watch 'npm test'"
   },
   "repository": {
     "type": "git",
@@ -61,6 +61,7 @@
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
+    "watch": "^0.19.2",
     "webpack-dev-server": "^1.15.2"
   }
 }
