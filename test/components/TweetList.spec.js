@@ -27,7 +27,15 @@ describe('TweetList', () => {
     expect(wrapper).to.have.exactly(3).descendants(Tweet)
   })
 
-  it('has first-item class for first tweet', () => {
+  it('has has no first-item class for first tweet', () => {
+    expect(wrapper.find('Tweet').at(0)).to.not.have.className('first-item')
+  })
+
+  it('has first-item class for first tweet if firstItem prop is set', () => {
+    props = {
+      firstItem: true,
+    }
+    wrapper.setProps(props)
     expect(wrapper.find('Tweet').at(0)).to.have.className('first-item')
   })
 })
