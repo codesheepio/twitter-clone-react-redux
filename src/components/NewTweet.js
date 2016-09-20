@@ -20,7 +20,7 @@ class NewTweet extends React.Component {
               />
             </div>
             <div className="col-sm-2">
-              <input type="button" className="btn btn-defalut" value="Tweet" />
+              <input type="button" className="btn btn-default" value="Tweet" />
             </div>
           </div>
         </form>
