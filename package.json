@@ -12,7 +12,9 @@
     "lint": "eslint .",
     "start": "webpack-dev-server",
     "test": "mocha --compilers js:babel-register --recursive && npm run lint",
-    "test:watch": "watch 'npm test'"
+    "test:watch": "watch 'npm test'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -68,6 +70,7 @@
     "watch": "^0.19.2",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.2",
-    "webpack-module-hot-accept": "^1.0.4"
+    "webpack-module-hot-accept": "^1.0.4",
+    "@kadira/storybook": "^2.5.2"
   }
 }
