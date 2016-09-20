@@ -7,10 +7,18 @@ class BodyContainer extends React.Component {
     return (
       <div className="container body">
         <LeftPanel />
-        <MainPanel />
+        <MainPanel enableTweet={this.props.enableTweet} />
       </div>
     )
   }
+}
+
+BodyContainer.propTypes = {
+  enableTweet: React.PropTypes.bool,
+}
+
+BodyContainer.defaultProps = {
+  enableTweet: false,
 }
 
 export default BodyContainer

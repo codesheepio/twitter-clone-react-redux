@@ -26,5 +26,14 @@ describe('BodyContainer', () => {
     expect(wrapper).to.have.className('body')
     expect(wrapper).to.have.descendants('LeftPanel')
     expect(wrapper).to.have.descendants('MainPanel')
+    expect(wrapper).to.not.have.descendants('NewTweet')
+  })
+
+  it('render NewTweet if enableTweet prop is enable', () => {
+    const props = {
+      enableTweet: true,
+    }
+    wrapper = reduxMount(<BodyContainer {...props} />, state)
+    expect(wrapper).to.have.descendants('NewTweet')
   })
 })
