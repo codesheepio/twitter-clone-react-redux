@@ -1,9 +1,13 @@
 import React from 'react'
-import { Route } from 'react-router'
-import App from '../components/App'
+import { Route, IndexRoute } from 'react-router'
+import Feed from './Feed'
+import Me from './Me'
 
 const routes = (
-  <Route path="/" component={App} />
+  <Route path="/">
+    <IndexRoute component={Feed} />
+    <Route path="/me" component={Me} />
+  </Route>
 )
 
 export default routes
