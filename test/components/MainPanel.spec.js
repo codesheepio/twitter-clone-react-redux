@@ -30,5 +30,6 @@ describe('MainPanel', () => {
     }
     wrapper = reduxMount(<MainPanel {...props} />, state)
     expect(wrapper).to.have.descendants('NewTweet')
+    expect(wrapper.find('NewTweet')).to.have.className('first-item')
   })
 })
