@@ -1,5 +1,5 @@
 import React from 'react'
-import { expect, shallow } from '../test-helper'
+import { expect, mount } from '../test-helper'
 import NewTweet from '../../src/components/NewTweet'
 
 describe('NewTweet', () => {
@@ -8,7 +8,7 @@ describe('NewTweet', () => {
 
   beforeEach(() => {
     props = {}
-    wrapper = shallow(<NewTweet {...props} />)
+    wrapper = mount(<NewTweet {...props} />)
   })
 
   it('renders correct structure', () => {
@@ -23,5 +23,19 @@ describe('NewTweet', () => {
     }
     wrapper.setProps(props)
     expect(wrapper).to.have.className('first-item')
+  })
+
+  it('has empty string as initial internal state', () => {
+    const expectedState = { tweetText: '' }
+    expect(wrapper.state()).to.deep.equal(expectedState)
+  })
+
+  it('changes state when typing in input box', () => {
+    wrapper.find('#tweetText').simulate('change', { target: { value: 'Hello' } })
+
+    const expectedState = {
+      tweetText: 'Hello',
+    }
+    expect(wrapper.state()).to.deep.equal(expectedState)
   })
 })

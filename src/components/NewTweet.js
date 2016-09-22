@@ -2,6 +2,20 @@ import React from 'react'
 import classnames from 'classnames'
 
 class NewTweet extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      tweetText: '',
+    }
+    this.handleOnChange = this.handleOnChange.bind(this)
+  }
+
+  handleOnChange(event) {
+    this.setState({
+      tweetText: event.target.value,
+    })
+  }
+
   render() {
     const newTweetClass = classnames('new-tweet', {
       'first-item': this.props.firstItem,
@@ -17,6 +31,7 @@ class NewTweet extends React.Component {
                 className="form-control"
                 id="tweetText"
                 placeholder="What's happening"
+                onChange={this.handleOnChange}
               />
             </div>
             <div className="col-sm-2">
