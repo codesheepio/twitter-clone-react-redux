@@ -1,9 +1,9 @@
 const initialState = {
-  name: 'Arnupharp Viratanapanu',
-  screenName: 'topscores',
-  numTweets: 50,
-  numFollowers: 100,
-  numFollowings: 200,
+  name: 'N/A',
+  screenName: 'notavailable',
+  numTweets: 0,
+  numFollowers: 0,
+  numFollowings: 0,
 }
 
 const profileReducer = (state = initialState, action) => {

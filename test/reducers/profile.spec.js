@@ -4,11 +4,11 @@ import profileReducer from '../../src/reducers/profile'
 describe('profileReducer', () => {
   it('returns correct initial state', () => {
     const expectedState = {
-      name: 'Arnupharp Viratanapanu',
-      screenName: 'topscores',
-      numTweets: 50,
-      numFollowers: 100,
-      numFollowings: 200,
+      name: 'N/A',
+      screenName: 'notavailable',
+      numTweets: 0,
+      numFollowers: 0,
+      numFollowings: 0,
     }
     expect(profileReducer(undefined, {})).to.deep.equal(expectedState)
   })
