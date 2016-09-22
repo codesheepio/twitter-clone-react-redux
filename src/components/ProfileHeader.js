@@ -1,15 +1,11 @@
 import React from 'react'
 
-class ProfileHeader extends React.Component {
-  render() {
-    return (
-      <div className="header">
-        <div className="name">{this.props.name}</div>
-        <div className="screen-name">@{this.props.screenName}</div>
-      </div>
-    )
-  }
-}
+const ProfileHeader = props => (
+  <div className="header">
+    <div className="name">{props.name}</div>
+    <div className="screen-name">@{props.screenName}</div>
+  </div>
+)
 
 ProfileHeader.propTypes = {
   name: React.PropTypes.string.isRequired,

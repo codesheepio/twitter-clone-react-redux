@@ -2,20 +2,16 @@ import React from 'react'
 import ProfileHeader from './ProfileHeader'
 import ProfileDetail from './ProfileDetail'
 
-class Profile extends React.Component {
-  render() {
-    return (
-      <div className="profile">
-        <ProfileHeader name={this.props.name} screenName={this.props.screenName} />
-        <ProfileDetail
-          numTweets={this.props.numTweets}
-          numFollowers={this.props.numFollowers}
-          numFollowings={this.props.numFollowings}
-        />
-      </div>
-    )
-  }
-}
+const Profile = props => (
+  <div className="profile">
+    <ProfileHeader name={props.name} screenName={props.screenName} />
+    <ProfileDetail
+      numTweets={props.numTweets}
+      numFollowers={props.numFollowers}
+      numFollowings={props.numFollowings}
+    />
+  </div>
+)
 
 Profile.propTypes = {
   name: React.PropTypes.string.isRequired,

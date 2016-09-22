@@ -2,16 +2,12 @@ import React from 'react'
 import LeftPanel from './LeftPanel'
 import MainPanel from './MainPanel'
 
-class BodyContainer extends React.Component {
-  render() {
-    return (
-      <div className="container body">
-        <LeftPanel />
-        <MainPanel enableTweet={this.props.enableTweet} />
-      </div>
-    )
-  }
-}
+const BodyContainer = props => (
+  <div className="container body">
+    <LeftPanel />
+    <MainPanel enableTweet={props.enableTweet} />
+  </div>
+)
 
 BodyContainer.propTypes = {
   enableTweet: React.PropTypes.bool,
