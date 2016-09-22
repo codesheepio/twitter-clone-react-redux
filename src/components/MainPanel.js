@@ -1,5 +1,5 @@
 import React from 'react'
-import NewTweet from './NewTweet'
+import NewTweet from '../containers/NewTweet'
 import TweetList from '../containers/TweetList'
 
 class MainPanel extends React.Component {

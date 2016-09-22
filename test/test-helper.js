@@ -5,8 +5,11 @@ import chai, { expect } from 'chai'
 import { shallow, mount, render } from 'enzyme'
 import chaiEnzyme from 'chai-enzyme'
 import jsdom from 'jsdom'
+import sinon from 'sinon'
+import sinonChai from 'sinon-chai'
 
 chai.use(chaiEnzyme())
+chai.use(sinonChai)
 
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>')
 global.window = document.defaultView
@@ -39,4 +42,5 @@ export {
   mount,
   render,
   reduxMount,
+  sinon,
 }

@@ -12,6 +12,13 @@ describe('MainPanel', () => {
       enableTweet: false,
     }
     state = {
+      profile: {
+        name: '',
+        screenName: '',
+        numTweets: 0,
+        numFollowers: 0,
+        numFollowings: 0,
+      },
       tweetList: [],
     }
     wrapper = reduxMount(<MainPanel {...props} />, state)
