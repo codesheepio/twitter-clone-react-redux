@@ -17,10 +17,10 @@ const initialState = {
     numFollowers: 500,
     numFollowings: 100,
   },
-  tweetList: [
-    { id: 1, name: 'Supasate Choochaisri', screenName: 'kaizerwing', tweetText: 'Hello World', timestamp: 1474531661204 },
+  ownTweets: [
+    { id: 1, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'Hello World', timestamp: 1474531661204 },
     { id: 2, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I am handsome', timestamp: 1474531661207 },
-    { id: 3, name: 'Supasate Choochaisri', screenName: 'kaizerwing', tweetText: 'I love react!', timestamp: 1474531661209 },
+    { id: 3, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I love react!', timestamp: 1474531661209 },
   ],
 }
 

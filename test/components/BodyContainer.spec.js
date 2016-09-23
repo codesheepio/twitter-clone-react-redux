@@ -15,7 +15,7 @@ describe('BodyContainer', () => {
         numFollowers: 0,
         numFollowings: 0,
       },
-      tweetList: [],
+      ownTweets: [],
     }
     wrapper = reduxMount(<BodyContainer />, state)
   })
