@@ -1,11 +1,20 @@
-import { createStore } from 'redux'
+import { createStore, compose } from 'redux'
+import { reduxReactRouter } from 'redux-router'
+import { createHistory } from 'history'
 import rootReducer from '../reducers'
+import routes from '../routes'
 
 const configureStore = (preloadedState) => {
   const store = createStore(
     rootReducer,
     preloadedState,
-    window.devToolsExtension && window.devToolsExtension()
+    compose(
+      reduxReactRouter({
+        routes,
+        createHistory,
+      }),
+      window.devToolsExtension && window.devToolsExtension()
+    )
   )
 
   if (module.hot) {

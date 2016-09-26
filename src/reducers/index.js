@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
+import { routerStateReducer } from 'redux-router'
 import profileReducer from './profile'
 import tweetsReducer from './tweets'
 
 const rootReducer = combineReducers({
-  routing: routerReducer,
+  router: routerStateReducer,
   profile: profileReducer,
   tweets: tweetsReducer,
 })
