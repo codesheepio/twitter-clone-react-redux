@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
 import Feed from './Feed'
-import Me from './Me'
+import User from './User'
 
 const routes = (
   <Route path="/">
     <IndexRoute component={Feed} />
-    <Route path="/me" component={Me} />
+    <Route path="/:screenName" component={User} />
   </Route>
 )
 
