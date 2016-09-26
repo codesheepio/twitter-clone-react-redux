@@ -8,6 +8,7 @@ import chaiEnzyme from 'chai-enzyme'
 import jsdom from 'jsdom'
 import sinon from 'sinon'
 import sinonChai from 'sinon-chai'
+import 'isomorphic-fetch'
 
 chai.use(chaiEnzyme())
 chai.use(sinonChai)
