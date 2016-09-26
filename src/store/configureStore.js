@@ -1,5 +1,6 @@
-import { createStore, compose } from 'redux'
+import { applyMiddleware, createStore, compose } from 'redux'
 import { reduxReactRouter } from 'redux-router'
+import thunk from 'redux-thunk'
 import { createHistory } from 'history'
 import rootReducer from '../reducers'
 import routes from '../routes'
@@ -9,6 +10,7 @@ const configureStore = (preloadedState) => {
     rootReducer,
     preloadedState,
     compose(
+      applyMiddleware(thunk),
       reduxReactRouter({
         routes,
         createHistory,

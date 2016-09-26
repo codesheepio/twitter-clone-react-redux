@@ -18,6 +18,9 @@ const reducer = (state = initialState, action) => {
         newTweet,
       ]
     }
+    case types.FETCH_SUCCESS: {
+      return action.payload.tweets
+    }
     default:
       return state
   }

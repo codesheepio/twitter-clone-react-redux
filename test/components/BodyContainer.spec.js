@@ -16,6 +16,11 @@ describe('BodyContainer', () => {
         numFollowings: 0,
       },
       tweets: [],
+      router: {
+        params: {
+          screenName: '',
+        },
+      },
     }
     wrapper = reduxMount(<BodyContainer />, state)
   })

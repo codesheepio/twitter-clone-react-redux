@@ -1,5 +1,5 @@
 import React from 'react'
-import { expect, mount } from '../test-helper'
+import { expect, mount, sinon } from '../test-helper'
 import TweetList from '../../src/components/TweetList'
 import Tweet from '../../src/components/Tweet'
 
@@ -14,6 +14,8 @@ describe('TweetList', () => {
         { id: 2, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I am handsome' },
         { id: 3, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I like pop music' },
       ],
+      screenName: 'kaizerwing',
+      fetchTweets: sinon.spy(),
     }
     wrapper = mount(<TweetList {...props} />)
   })
@@ -37,5 +39,9 @@ describe('TweetList', () => {
     }
     wrapper.setProps(props)
     expect(wrapper.find('Tweet').at(0)).to.have.className('first-item')
+  })
+
+  it('calls fetchTweets props with screenName props', () => {
+    expect(props.fetchTweets).to.have.been.calledWith('kaizerwing')
   })
 })
