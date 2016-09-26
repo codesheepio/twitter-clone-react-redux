@@ -19,7 +19,7 @@ describe('MainPanel', () => {
         numFollowers: 0,
         numFollowings: 0,
       },
-      ownTweets: [],
+      tweets: [],
     }
     wrapper = reduxMount(<MainPanel {...props} />, state)
   })

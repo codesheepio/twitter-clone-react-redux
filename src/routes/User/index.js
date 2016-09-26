@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import BodyContainer from '../../components/BodyContainer'
 
 class User extends React.Component {
@@ -10,11 +9,4 @@ class User extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  console.log('user ownProps')
-  console.log(ownProps)
-
-  return state
-}
-
-export default connect(mapStateToProps)(User)
+export default User
