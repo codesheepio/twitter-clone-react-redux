@@ -33,7 +33,7 @@
     "public": false
   },
   "Tweet": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": true
   }
 }
