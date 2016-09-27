@@ -3,7 +3,7 @@ module.exports = function(TwisterUser) {
   TwisterUser.disableRemoteMethod("exists", true);
   TwisterUser.disableRemoteMethod("upsert", true);
   TwisterUser.disableRemoteMethod("replaceById", true);
-  TwisterUser.disableRemoteMethod("updateAttributes", false);
+  TwisterUser.disableRemoteMethod("updateAll", true);
   TwisterUser.disableRemoteMethod('__count__accessTokens', false);
   TwisterUser.disableRemoteMethod('__create__accessTokens', false);
   TwisterUser.disableRemoteMethod('__delete__accessTokens', false);
