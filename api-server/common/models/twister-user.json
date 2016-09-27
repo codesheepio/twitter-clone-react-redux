@@ -13,13 +13,12 @@
   },
   "validations": [],
   "relations": {},
-  "methods": {},
   "acls": [
     {
       "accessType": "*",
       "principalType": "ROLE",
       "principalId": "$everyone",
-      "permission": "ALLOW"
+      "permission": "DENY"
     },
     {
       "accessType": "READ",
@@ -65,11 +64,12 @@
       "property": "confirm"
     },
     {
+      "accessType": "EXECUTE",
       "principalType": "ROLE",
       "principalId": "$everyone",
       "permission": "ALLOW",
-      "property": "resetPassword",
-      "accessType": "EXECUTE"
+      "property": "resetPassword"
     }
-  ]
+  ],
+  "methods": {}
 }
