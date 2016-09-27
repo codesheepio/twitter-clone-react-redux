@@ -17,7 +17,9 @@
     "dataSource": "mongo",
     "public": false,
     "relations": {
-      "user": { "model": "TwisterUser" }
+      "user": {
+        "model": "TwisterUser"
+      }
     }
   },
   "ACL": {
@@ -37,6 +39,10 @@
     "public": true
   },
   "TwisterUser": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Follow": {
     "dataSource": "mongo",
     "public": true
   }
