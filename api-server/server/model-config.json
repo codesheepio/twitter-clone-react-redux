@@ -13,26 +13,30 @@
       "./mixins"
     ]
   },
-  "User": {
-    "dataSource": "db"
-  },
   "AccessToken": {
-    "dataSource": "db",
-    "public": false
+    "dataSource": "mongo",
+    "public": false,
+    "relations": {
+      "user": { "model": "TwisterUser" }
+    }
   },
   "ACL": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "RoleMapping": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "Role": {
-    "dataSource": "db",
+    "dataSource": "mongo",
     "public": false
   },
   "Tweet": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "TwisterUser": {
     "dataSource": "mongo",
     "public": true
   }
