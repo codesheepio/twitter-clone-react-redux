@@ -1,11 +1,16 @@
 {
   "name": "TwisterUser",
   "base": "User",
-  "idInjection": true,
+  "idInjection": false,
   "options": {
     "validateUpsert": true
   },
   "properties": {
+    "username": {
+      "type": "string",
+      "id": true,
+      "required": true
+    },
     "name": {
       "type": "string",
       "required": true
