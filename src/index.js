@@ -11,6 +11,8 @@ import './style/main.scss'
 
 const initialState = {
   profile: {
+    name: '',
+    username: '',
     numTweets: 50,
     numFollowers: 500,
     numFollowings: 100,
