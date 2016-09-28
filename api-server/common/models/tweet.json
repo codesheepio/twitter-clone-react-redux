@@ -14,7 +14,7 @@
       "type": "string",
       "required": true
     },
-    "screenName": {
+    "username": {
       "type": "string",
       "required": true
     },
@@ -29,7 +29,13 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "twisterUser": {
+      "type": "belongsTo",
+      "model": "TwisterUser",
+      "foreignKey": "username"
+    }
+  },
   "acls": [
     {
       "accessType": "*",
@@ -54,7 +60,8 @@
       "accessType": "WRITE",
       "principalType": "ROLE",
       "principalId": "$owner",
-      "permission": "ALLOW"
+      "permission": "ALLOW",
+      "property": "deleteById"
     }
   ],
   "methods": {}
