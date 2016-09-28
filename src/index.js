@@ -11,13 +11,16 @@ import './style/main.scss'
 
 const initialState = {
   profile: {
-    name: 'Arnupharp Viratapanu',
-    username: 'topscores',
     numTweets: 50,
     numFollowers: 500,
     numFollowings: 100,
   },
   fetching: NO_FETCHING,
+  auth: {
+    isLogin: true,
+    username: 'topscores',
+    name: 'Arnupharp Viratanapanu',
+  },
 }
 
 const store = configureStore(initialState)

@@ -15,6 +15,16 @@ describe('LeftPanel', () => {
         numFollowers: 500,
         numFollowings: 700,
       },
+      router: {
+        params: {
+          username: '',
+        },
+      },
+      auth: {
+        isLogin: false,
+        name: '',
+        username: '',
+      },
     }
     wrapper = reduxMount(<LeftPanel />, state)
   })

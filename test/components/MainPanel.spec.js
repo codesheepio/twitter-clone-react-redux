@@ -25,6 +25,11 @@ describe('MainPanel', () => {
           username: '',
         },
       },
+      auth: {
+        isLogin: false,
+        name: '',
+        username: '',
+      },
     }
     wrapper = reduxMount(<MainPanel {...props} />, state)
   })

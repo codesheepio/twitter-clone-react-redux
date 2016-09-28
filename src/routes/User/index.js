@@ -1,5 +1,5 @@
 import React from 'react'
-import BodyContainer from '../../components/BodyContainer'
+import BodyContainer from '../../containers/BodyContainer'
 
 class User extends React.Component {
   render() {

@@ -1,12 +1,17 @@
 import React from 'react'
-import { expect, reduxMount } from '../test-helper'
+import { expect, reduxMount, sinon } from '../test-helper'
 import BodyContainer from '../../src/components/BodyContainer'
 
 describe('BodyContainer', () => {
   let wrapper
+  let props
   let state
 
   beforeEach(() => {
+    props = {
+      username: '',
+      fetchProfile: sinon.spy(),
+    }
     state = {
       profile: {
         name: '',
@@ -21,8 +26,13 @@ describe('BodyContainer', () => {
           username: '',
         },
       },
+      auth: {
+        isLogin: false,
+        name: '',
+        username: '',
+      },
     }
-    wrapper = reduxMount(<BodyContainer />, state)
+    wrapper = reduxMount(<BodyContainer {...props} />, state)
   })
 
   it('renders correct structure', () => {
@@ -35,8 +45,10 @@ describe('BodyContainer', () => {
   })
 
   it('render NewTweet if enableTweet prop is enable', () => {
-    const props = {
+    props = {
       enableTweet: true,
+      username: '',
+      fetchProfile: sinon.spy(),
     }
     wrapper = reduxMount(<BodyContainer {...props} />, state)
     expect(wrapper).to.have.descendants('NewTweet')

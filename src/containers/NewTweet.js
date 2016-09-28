@@ -3,8 +3,8 @@ import NewTweet from '../components/NewTweet'
 import { addTweet } from '../actions/tweet'
 
 const mapStateToProps = state => ({
-  userName: state.profile.name,
-  username: state.profile.username,
+  name: state.router.params.username ? state.profile.name : state.auth.name,
+  username: state.router.params.username ? state.profile.username : state.auth.username,
 })
 
 const mapDispatchToProps = dispatch => ({

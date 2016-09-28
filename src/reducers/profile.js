@@ -1,3 +1,5 @@
+import types from '../actions/types'
+
 const initialState = {
   name: 'N/A',
   username: 'notavailable',
@@ -8,6 +10,13 @@ const initialState = {
 
 const profileReducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.FETCH_PROFILE_SUCCESS: {
+      return {
+        ...state,
+        name: action.payload.name,
+        username: action.payload.username,
+      }
+    }
     default:
       return state
   }
