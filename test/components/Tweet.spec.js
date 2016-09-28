@@ -10,7 +10,7 @@ describe('Tweet', () => {
     props = {
       id: 1,
       name: 'Supasate Choochaisri',
-      screenName: 'kaizerwing',
+      username: 'kaizerwing',
       tweetText: 'I love coding',
     }
     wrapper = shallow(<Tweet {...props} />)
@@ -29,7 +29,7 @@ describe('Tweet', () => {
   })
 
   it('renders screen name from props', () => {
-    expect(wrapper.find('.screen-name')).to.have.text(`@${props.screenName}`)
+    expect(wrapper.find('.screen-name')).to.have.text(`@${props.username}`)
   })
 
   it('renders tweet text from props', () => {

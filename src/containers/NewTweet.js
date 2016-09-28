@@ -4,12 +4,12 @@ import { addTweet } from '../actions/tweet'
 
 const mapStateToProps = state => ({
   userName: state.profile.name,
-  userScreenName: state.profile.screenName,
+  username: state.profile.username,
 })
 
 const mapDispatchToProps = dispatch => ({
-  addTweet: (name, screenName, tweetText, timestamp) =>
-    dispatch(addTweet(name, screenName, tweetText, timestamp)),
+  addTweet: (name, username, tweetText, timestamp) =>
+    dispatch(addTweet(name, username, tweetText, timestamp)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewTweet)

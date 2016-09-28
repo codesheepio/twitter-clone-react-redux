@@ -21,7 +21,7 @@ class NewTweet extends React.Component {
     event.preventDefault()
     this.props.addTweet(
       this.props.userName,
-      this.props.userScreenName,
+      this.props.username,
       this.state.tweetText,
       Date.now()
     )
@@ -67,7 +67,7 @@ class NewTweet extends React.Component {
 NewTweet.propTypes = {
   firstItem: React.PropTypes.bool,
   userName: React.PropTypes.string.isRequired,
-  userScreenName: React.PropTypes.string.isRequired,
+  username: React.PropTypes.string.isRequired,
   addTweet: React.PropTypes.func.isRequired,
 }
 

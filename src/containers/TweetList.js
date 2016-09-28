@@ -3,12 +3,12 @@ import TweetList from '../components/TweetList'
 import { fetchTweets } from '../actions/tweet'
 
 const mapStateToProps = state => ({
-  screenName: state.router.params.screenName,
+  username: state.router.params.username,
   tweets: state.tweets,
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchTweets: screenName => dispatch(fetchTweets(screenName)),
+  fetchTweets: username => dispatch(fetchTweets(username)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TweetList)

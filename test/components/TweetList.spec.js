@@ -10,11 +10,11 @@ describe('TweetList', () => {
   beforeEach(() => {
     props = {
       tweets: [
-        { id: 1, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'Hello World' },
-        { id: 2, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I am handsome' },
-        { id: 3, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I like pop music' },
+        { id: 1, name: 'Arnupharp Viratanapanu', username: 'topscores', tweetText: 'Hello World' },
+        { id: 2, name: 'Arnupharp Viratanapanu', username: 'topscores', tweetText: 'I am handsome' },
+        { id: 3, name: 'Arnupharp Viratanapanu', username: 'topscores', tweetText: 'I like pop music' },
       ],
-      screenName: 'kaizerwing',
+      username: 'kaizerwing',
       fetchTweets: sinon.spy(),
     }
     wrapper = mount(<TweetList {...props} />)
@@ -41,7 +41,7 @@ describe('TweetList', () => {
     expect(wrapper.find('Tweet').at(0)).to.have.className('first-item')
   })
 
-  it('calls fetchTweets props with screenName props', () => {
+  it('calls fetchTweets props with username props', () => {
     expect(props.fetchTweets).to.have.been.calledWith('kaizerwing')
   })
 })

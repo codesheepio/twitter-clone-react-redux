@@ -6,7 +6,7 @@ import User from './User'
 const routes = (
   <Route path="/">
     <IndexRoute component={Feed} />
-    <Route path="/:screenName" component={User} />
+    <Route path="/:username" component={User} />
   </Route>
 )
 

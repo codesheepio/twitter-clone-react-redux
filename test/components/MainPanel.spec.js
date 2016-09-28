@@ -14,7 +14,7 @@ describe('MainPanel', () => {
     state = {
       profile: {
         name: '',
-        screenName: '',
+        username: '',
         numTweets: 0,
         numFollowers: 0,
         numFollowings: 0,
@@ -22,7 +22,7 @@ describe('MainPanel', () => {
       tweets: [],
       router: {
         params: {
-          screenName: '',
+          username: '',
         },
       },
     }

@@ -12,7 +12,7 @@ import './style/main.scss'
 const initialState = {
   profile: {
     name: 'Arnupharp Viratapanu',
-    screenName: 'topscores',
+    username: 'topscores',
     numTweets: 50,
     numFollowers: 500,
     numFollowings: 100,

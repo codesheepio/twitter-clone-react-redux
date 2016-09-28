@@ -11,7 +11,7 @@ describe('Profile', () => {
   beforeEach(() => {
     props = {
       name: 'Supaste Choochaisri',
-      screenName: 'kaizerwing',
+      username: 'kaizerwing',
       numTweets: 1337,
       numFollowers: 400,
       numFollowings: 555,
@@ -22,7 +22,7 @@ describe('Profile', () => {
   it('renders correct structure', () => {
     expect(wrapper).to.have.tagName('div')
     expect(wrapper).to.have.className('profile')
-    expect(wrapper).to.contain(<ProfileHeader name={props.name} screenName={props.screenName} />)
+    expect(wrapper).to.contain(<ProfileHeader name={props.name} username={props.username} />)
     expect(wrapper).to.contain(
       <ProfileDetail
         numTweets={props.numTweets}
@@ -32,10 +32,10 @@ describe('Profile', () => {
     )
   })
 
-  it('passes name and screenName to ProfileHeader via props', () => {
+  it('passes name and username to ProfileHeader via props', () => {
     const profileHeaderWrapper = wrapper.find('ProfileHeader')
     expect(profileHeaderWrapper).to.have.prop('name', props.name)
-    expect(profileHeaderWrapper).to.have.prop('screenName', props.screenName)
+    expect(profileHeaderWrapper).to.have.prop('username', props.username)
   })
 
   it('passes numTweet, numFollowers, numFollowings to ProfileDetail via props', () => {

@@ -9,7 +9,7 @@ const Tweet = (props) => {
   return (
     <div className={tweetClass}>
       <div className="name">{props.name}</div>
-      <div className="screen-name">@{props.screenName}</div>
+      <div className="screen-name">@{props.username}</div>
       <div className="tweet-text">{props.tweetText}</div>
     </div>
   )
@@ -17,7 +17,7 @@ const Tweet = (props) => {
 
 Tweet.propTypes = {
   name: React.PropTypes.string.isRequired,
-  screenName: React.PropTypes.string.isRequired,
+  username: React.PropTypes.string.isRequired,
   tweetText: React.PropTypes.string.isRequired,
   firstItem: React.PropTypes.bool,
 }

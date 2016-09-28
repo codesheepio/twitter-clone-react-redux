@@ -15,7 +15,7 @@ storiesOf('Profile', module)
   .add('with props', () => (
     <Profile
       name="Supasate Choochaisri"
-      screenName="kaizerwing"
+      username="kaizerwing"
       numTweets="30"
       numFollowers="100"
       numFollowings="200"
@@ -26,7 +26,7 @@ storiesOf('Tweet', module)
   .add('with props', () => (
     <Tweet
       name="Supasate Choochaisri"
-      screenName="kaizerwing"
+      username="kaizerwing"
       tweetText="Hello World"
     />
   ))
@@ -34,9 +34,9 @@ storiesOf('Tweet', module)
 storiesOf('TweetList', module)
   .add('with tweets', () => {
     const tweets = [
-      { id: 1, name: 'Arnupharp Viratanapanu', screenName: 'topscores', tweetText: 'I am handsome' },
-      { id: 2, name: 'Supasate Choochaisri', screenName: 'kaizerwing', tweetText: 'Hello World' },
-      { id: 3, name: 'Supasate Choochaisri', screenName: 'kaizerwing', tweetText: 'This is storybook' },
+      { id: 1, name: 'Arnupharp Viratanapanu', username: 'topscores', tweetText: 'I am handsome' },
+      { id: 2, name: 'Supasate Choochaisri', username: 'kaizerwing', tweetText: 'Hello World' },
+      { id: 3, name: 'Supasate Choochaisri', username: 'kaizerwing', tweetText: 'This is storybook' },
     ]
     return (
       <TweetList tweets={tweets} />

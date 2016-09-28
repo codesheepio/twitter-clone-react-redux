@@ -1,10 +1,10 @@
 import types from './types'
 
-const addTweet = (name, screenName, tweetText, timestamp) => ({
+const addTweet = (name, username, tweetText, timestamp) => ({
   type: types.ADD_TWEET,
   payload: {
     name,
-    screenName,
+    username,
     tweetText,
     timestamp,
   },
@@ -22,12 +22,12 @@ const fetchSuccess = tweets => ({
   },
 })
 
-const fetchTweets = screenName => (dispatch) => {
+const fetchTweets = username => (dispatch) => {
   dispatch(fetchInProgress())
 
   let uri = 'http://localhost:3000/api/Tweets'
-  if (screenName) {
-    uri = `${uri}?filter={%22where%22:{%22screenName%22:%22${screenName}%22}}`
+  if (username) {
+    uri = `${uri}?filter={%22where%22:{%22username%22:%22${username}%22}}`
   }
   fetch(uri)
     .then(response => response.json())

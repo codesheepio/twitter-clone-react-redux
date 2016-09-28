@@ -1,6 +1,6 @@
 const initialState = {
   name: 'N/A',
-  screenName: 'notavailable',
+  username: 'notavailable',
   numTweets: 0,
   numFollowers: 0,
   numFollowings: 0,

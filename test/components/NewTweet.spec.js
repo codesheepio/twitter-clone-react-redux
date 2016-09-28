@@ -9,7 +9,7 @@ describe('NewTweet', () => {
   beforeEach(() => {
     props = {
       userName: 'Supasate Choochaisri',
-      userScreenName: 'kaizerwing',
+      username: 'kaizerwing',
       numTweets: 1337,
       numFollowers: 500,
       numFollowings: 700,

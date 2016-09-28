@@ -3,7 +3,7 @@ import Profile from '../components/Profile'
 
 const mapStateToProps = state => ({
   name: state.profile.name,
-  screenName: state.profile.screenName,
+  username: state.profile.username,
   numTweets: state.profile.numTweets,
   numFollowers: state.profile.numFollowers,
   numFollowings: state.profile.numFollowings,

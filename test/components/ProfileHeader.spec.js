@@ -9,7 +9,7 @@ describe('ProfileHeader', () => {
   beforeEach(() => {
     props = {
       name: 'Supasate Choochaisri',
-      screenName: 'kaizerwing',
+      username: 'kaizerwing',
     }
     wrapper = shallow(<ProfileHeader {...props} />)
   })

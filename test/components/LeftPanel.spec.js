@@ -10,7 +10,7 @@ describe('LeftPanel', () => {
     state = {
       profile: {
         name: 'Supasate Choochaisri',
-        screenName: 'kaizerwing',
+        username: 'kaizerwing',
         numTweets: 1337,
         numFollowers: 500,
         numFollowings: 700,

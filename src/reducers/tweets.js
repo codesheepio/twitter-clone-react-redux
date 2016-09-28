@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
       const newTweet = {
         id: nextId,
         name: action.payload.name,
-        screenName: action.payload.screenName,
+        username: action.payload.username,
         tweetText: action.payload.tweetText,
         timestamp: Date.now(),
       }
