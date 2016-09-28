@@ -11,12 +11,12 @@ const addTweet = (name, username, tweetText, timestamp) => ({
 })
 
 const fetchInProgress = () => ({
-  type: types.FETCH_IN_PROGRESS,
+  type: types.FETCH_TWEETS_IN_PROGRESS,
   payload: {},
 })
 
 const fetchSuccess = tweets => ({
-  type: types.FETCH_SUCCESS,
+  type: types.FETCH_TWEETS_SUCCESS,
   payload: {
     tweets,
   },

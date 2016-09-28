@@ -8,10 +8,10 @@ describe('tweetFetchingReducer', () => {
     expect(tweetFetchingReducer(undefined, {})).to.equal(NO_FETCHING)
   })
 
-  it('changes from NO_FETCHING to FETCHING state when receiving FETCH_IN_PROGRESS action', () => {
+  it('changes from NO_FETCHING to FETCHING state when receiving FETCH_TWEETS_IN_PROGRESS action', () => {
     const curState = NO_FETCHING
     const action = {
-      type: types.FETCH_IN_PROGRESS,
+      type: types.FETCH_TWEETS_IN_PROGRESS,
       payload: {},
     }
     const nextState = tweetFetchingReducer(curState, action)
@@ -20,10 +20,10 @@ describe('tweetFetchingReducer', () => {
     expect(nextState).to.equal(expectedState)
   })
 
-  it('changes from FETCHING to NO_FETCHING state when receiving FETCH_SUCCESS action', () => {
+  it('changes from FETCHING to NO_FETCHING state when receiving FETCH_TWEETS_SUCCESS action', () => {
     const curState = FETCHING
     const action = {
-      type: types.FETCH_SUCCESS,
+      type: types.FETCH_TWEETS_SUCCESS,
       payload: [],
     }
     const nextState = tweetFetchingReducer(curState, action)
@@ -32,10 +32,10 @@ describe('tweetFetchingReducer', () => {
     expect(nextState).to.equal(expectedState)
   })
 
-  it('does not change from NO_FETCHING state when receiving FETCH_SUCCESS action', () => {
+  it('does not change from NO_FETCHING state when receiving FETCH_TWEETS_SUCCESS action', () => {
     const curState = NO_FETCHING
     const action = {
-      type: types.FETCH_SUCCESS,
+      type: types.FETCH_TWEETS_SUCCESS,
       payload: [],
     }
     const nextState = tweetFetchingReducer(curState, action)
