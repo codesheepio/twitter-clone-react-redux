@@ -8,6 +8,11 @@
   "plugins": [
     "import",
   ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+    },
+  },
   "rules": {
     "class-methods-use-this": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
