@@ -27,7 +27,7 @@ const fetchTweets = username => (dispatch) => {
 
   let uri = 'http://localhost:3000/api/Tweets'
   if (username) {
-    uri = `${uri}?filter={%22where%22:{%22username%22:%22${username}%22}}`
+    uri = `${uri}?filter={"where":{"username":"${username}"}}`
   }
   fetch(uri)
     .then(response => response.json())
