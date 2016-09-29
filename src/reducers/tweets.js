@@ -5,17 +5,16 @@ const initialState = []
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case types.ADD_TWEET: {
-      const nextId = state.reduce((lastId, tweet) => Math.max(lastId, tweet.id), 0) + 1
       const newTweet = {
-        id: nextId,
+        id: action.payload.id,
         name: action.payload.name,
         username: action.payload.username,
         tweetText: action.payload.tweetText,
-        timestamp: Date.now(),
+        timestamp: action.payload.timestamp,
       }
       return [
-        ...state,
         newTweet,
+        ...state,
       ]
     }
     case types.FETCH_TWEETS_SUCCESS: {

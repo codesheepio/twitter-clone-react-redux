@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "AccessToken": {
+    "dataSource": "mongo",
+    "public": false,
+    "relations": {
+      "user": {
+        "model": "TwisterUser"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "mongo",
+    "public": false
+  },
+  "Tweet": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "TwisterUser": {
+    "dataSource": "mongo",
+    "public": true
+  },
+  "Follow": {
+    "dataSource": "mongo",
+    "public": true
+  }
+}
