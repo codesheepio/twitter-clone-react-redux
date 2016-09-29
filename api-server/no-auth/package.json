@@ -1,5 +1,5 @@
 {
-  "name": "api-server",
+  "name": "api-server-no-auth",
   "version": "1.0.0",
   "main": "server/server.js",
   "scripts": {
@@ -26,5 +26,5 @@
     "type": "",
     "url": ""
   },
-  "description": "api-server"
+  "description": "api-server-no-auth"
 }
