@@ -2,12 +2,10 @@ import types from './types'
 
 const addTweetInProgress = () => ({
   type: types.ADD_TWEET_IN_PROGRESS,
-  payload: {},
 })
 
 const addTweetSuccess = () => ({
   type: types.ADD_TWEET_SUCCESS,
-  payload: {},
 })
 
 const addTweetFail = error => ({
@@ -20,7 +18,7 @@ const addTweet = (name, username, tweetText) => (dispatch) => {
   dispatch(addTweetInProgress())
 
   const uri = 'http://localhost:3000/api/Tweets'
-  fetch(uri, {
+  return fetch(uri, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -33,14 +31,12 @@ const addTweet = (name, username, tweetText) => (dispatch) => {
     }),
   })
   .then((response) => {
-    console.log(response)
     if (!response.ok) {
       throw Error(response.statusText)
     }
     return response.json()
   })
   .then((data) => {
-    console.log(data)
     dispatch({
       type: types.ADD_TWEET,
       payload: {

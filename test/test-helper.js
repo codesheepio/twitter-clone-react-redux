@@ -2,6 +2,7 @@ import React from 'react'
 import configureMockStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
+import nock from 'nock'
 import chai, { expect } from 'chai'
 import { shallow, mount, render } from 'enzyme'
 import chaiEnzyme from 'chai-enzyme'
@@ -45,4 +46,5 @@ export {
   render,
   reduxMount,
   sinon,
+  nock,
 }
