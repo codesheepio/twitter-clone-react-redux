@@ -5,25 +5,19 @@ import { Provider } from 'react-redux'
 import { ReduxRouter } from 'redux-router'
 import configureStore from './store/configureStore'
 import routes from './routes'
-import { NO_FETCHING } from './constants/fetchingStatus'
+import { saveState, loadState } from './utils/localStorage'
 import './style/custom.scss'
 import './style/main.scss'
 
-const initialState = {
-  profile: {
-    name: '',
-    username: '',
-    numTweets: 50,
-    numFollowers: 500,
-    numFollowings: 100,
-  },
-  fetching: NO_FETCHING,
-  auth: {
-    isLogin: false,
-  },
-}
+const initialState = loadState()
 
 const store = configureStore(initialState)
+
+store.subscribe(() => {
+  saveState({
+    auth: store.getState().auth,
+  })
+})
 
 ReactDOM.render(
   <Provider store={store} >
