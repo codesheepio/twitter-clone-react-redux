@@ -18,7 +18,14 @@ const reducer = (state = initialState, action) => {
       ]
     }
     case types.FETCH_TWEETS_SUCCESS: {
-      return action.payload.tweets
+      return action.payload.tweets.sort((a, b) => {
+        if (a.timestamp > b.timestamp) {
+          return -1
+        } else if (a.timestamp < b.timestamp) {
+          return 1
+        }
+        return 0
+      })
     }
     default:
       return state
