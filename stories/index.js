@@ -9,6 +9,7 @@ import Tweet from '../src/components/Tweet'
 import TweetList from '../src/components/TweetList'
 import LoginForm from '../src/components/LoginForm'
 import SignupForm from '../src/components/SignupForm'
+import NavBar from '../src/components/NavBar'
 import '../src/style/custom.scss'
 import '../src/style/main.scss'
 
@@ -73,3 +74,8 @@ storiesOf('SignupForm', module)
       </Provider>
     )
   })
+
+storiesOf('NavBar', module)
+  .add('', () =>
+    <NavBar />
+  )
