@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NavBar = ({ isLogin, goToLogin, goToSignup }) => {
+const NavBar = ({ isLogin, goToLogin, goToSignup, logout }) => {
   const handleLoginClick = () => {
     goToLogin()
   }
@@ -9,9 +9,13 @@ const NavBar = ({ isLogin, goToLogin, goToSignup }) => {
     goToSignup()
   }
 
+  const handleLogoutClick = () => {
+    logout()
+  }
+
   const authComponent = isLogin ?
     <div className="navbar-form navbar-right">
-      <button className="btn btn-primary">Log out</button>
+      <button className="btn btn-primary" onClick={handleLogoutClick}>Log out</button>
     </div>
     :
     <div className="navbar-form navbar-right">
@@ -47,6 +51,7 @@ const NavBar = ({ isLogin, goToLogin, goToSignup }) => {
 NavBar.propTypes = {
   goToLogin: React.PropTypes.func.isRequired,
   goToSignup: React.PropTypes.func.isRequired,
+  logout: React.PropTypes.func.isRequired,
   isLogin: React.PropTypes.bool,
 }
 
