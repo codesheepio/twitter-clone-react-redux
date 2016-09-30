@@ -8,6 +8,7 @@ import Profile from '../src/components/Profile'
 import Tweet from '../src/components/Tweet'
 import TweetList from '../src/components/TweetList'
 import LoginForm from '../src/components/LoginForm'
+import SignupForm from '../src/components/SignupForm'
 import '../src/style/custom.scss'
 import '../src/style/main.scss'
 
@@ -58,6 +59,17 @@ storiesOf('LoginForm', module)
     return (
       <Provider store={store}>
         <LoginForm />
+      </Provider>
+    )
+  })
+
+storiesOf('SignupForm', module)
+  .add('', () => {
+    const mockStore = configureMockStore()
+    const store = mockStore()
+    return (
+      <Provider store={store}>
+        <SignupForm />
       </Provider>
     )
   })
