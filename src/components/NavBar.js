@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NavBar = ({ goToLogin, goToSignup }) => {
+const NavBar = ({ isLogin, goToLogin, goToSignup }) => {
   const handleLoginClick = () => {
     goToLogin()
   }
@@ -8,6 +8,17 @@ const NavBar = ({ goToLogin, goToSignup }) => {
   const handleSignupClick = () => {
     goToSignup()
   }
+
+  const authComponent = isLogin ?
+    <div className="navbar-form navbar-right">
+      <button className="btn btn-primary">Log out</button>
+    </div>
+    :
+    <div className="navbar-form navbar-right">
+      <button className="btn btn-default" onClick={handleLoginClick}>Log in</button>
+      <button className="btn btn-primary" onClick={handleSignupClick}>Sign up</button>
+    </div>
+
 
   return (
     <nav className="navbar navbar-default navbar-fixed-top">
@@ -27,12 +38,7 @@ const NavBar = ({ goToLogin, goToSignup }) => {
           </button>
           <a className="navbar-brand">Twister</a>
         </div>
-        <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <div className="navbar-form navbar-right">
-            <button className="btn btn-default" onClick={handleLoginClick}>Log in</button>
-            <button className="btn btn-primary" onClick={handleSignupClick}>Sign up</button>
-          </div>
-        </div>
+        { authComponent }
       </div>
     </nav>
   )
@@ -41,6 +47,11 @@ const NavBar = ({ goToLogin, goToSignup }) => {
 NavBar.propTypes = {
   goToLogin: React.PropTypes.func.isRequired,
   goToSignup: React.PropTypes.func.isRequired,
+  isLogin: React.PropTypes.bool,
+}
+
+NavBar.defaultProps = {
+  isLogin: false,
 }
 
 export default NavBar

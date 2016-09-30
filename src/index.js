@@ -19,9 +19,7 @@ const initialState = {
   },
   fetching: NO_FETCHING,
   auth: {
-    isLogin: true,
-    username: 'topscores',
-    name: 'Arnupharp Viratanapanu',
+    isLogin: false,
   },
 }
 
