@@ -4,6 +4,7 @@ const initialState = {
   isLogin: false,
   username: '',
   name: '',
+  token: '',
 }
 
 const authReducer = (state = initialState, action) => {
@@ -13,6 +14,7 @@ const authReducer = (state = initialState, action) => {
         isLogin: true,
         username: action.payload.username,
         name: action.payload.name,
+        token: action.payload.token,
       }
     }
     case types.LOGIN_FAIL: {
@@ -20,6 +22,7 @@ const authReducer = (state = initialState, action) => {
         isLogin: false,
         username: '',
         name: '',
+        token: null,
       }
     }
     default: {
