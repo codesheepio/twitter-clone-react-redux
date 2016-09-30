@@ -40,7 +40,7 @@ const NavBar = ({ isLogin, goToLogin, goToSignup, logout }) => {
             <span className="icon-bar" />
             <span className="icon-bar" />
           </button>
-          <a className="navbar-brand">Twister</a>
+          <a className="navbar-brand" href="/">Twister</a>
         </div>
         { authComponent }
       </div>
