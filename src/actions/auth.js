@@ -39,6 +39,13 @@ const login = (username, password) => (dispatch) => {
   .catch(error => dispatch(loginFail(error)))
 }
 
+const logout = () => (dispatch) => {
+  dispatch({
+    type: types.LOGOUT,
+  })
+  dispatch(push('/'))
+}
+
 const signupInProgress = () => ({
   type: types.SIGNUP_IN_PROGRESS,
 })
@@ -92,6 +99,7 @@ export {
   loginInProgress,
   loginSuccess,
   loginFail,
+  logout,
   signup,
   signupInProgress,
   signupSuccess,
