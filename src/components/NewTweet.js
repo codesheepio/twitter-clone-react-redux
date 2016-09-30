@@ -23,7 +23,7 @@ class NewTweet extends React.Component {
       this.props.name,
       this.props.username,
       this.state.tweetText,
-      Date.now()
+      this.props.token
     )
     this.setState({
       tweetText: '',
@@ -68,6 +68,7 @@ NewTweet.propTypes = {
   firstItem: React.PropTypes.bool,
   name: React.PropTypes.string.isRequired,
   username: React.PropTypes.string.isRequired,
+  token: React.PropTypes.string.isRequired,
   addTweet: React.PropTypes.func.isRequired,
 }
 

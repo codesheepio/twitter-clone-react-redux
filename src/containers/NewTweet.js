@@ -5,6 +5,7 @@ import { addTweet } from '../actions/tweet'
 const mapStateToProps = state => ({
   name: state.router.params.username ? state.profile.name : state.auth.name,
   username: state.router.params.username ? state.profile.username : state.auth.username,
+  token: state.auth.token,
 })
 
 const mapDispatchToProps = dispatch => ({

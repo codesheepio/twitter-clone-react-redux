@@ -14,10 +14,10 @@ const addTweetFail = error => ({
   error: true,
 })
 
-const addTweet = (name, username, tweetText) => (dispatch) => {
+const addTweet = (name, username, tweetText, token) => (dispatch) => {
   dispatch(addTweetInProgress())
 
-  const uri = 'http://localhost:3000/api/Tweets'
+  const uri = `http://localhost:3000/api/Tweets?access_token=${token}`
   return fetch(uri, {
     method: 'POST',
     headers: {
