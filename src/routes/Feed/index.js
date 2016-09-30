@@ -11,6 +11,12 @@ class Feed extends React.Component {
     }
   }
 
+  componentWillUpdate(nextProps) {
+    if (!nextProps.token) {
+      this.props.redirect('/login')
+    }
+  }
+
   render() {
     return (
       <div>
