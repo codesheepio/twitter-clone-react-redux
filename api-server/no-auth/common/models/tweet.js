@@ -22,6 +22,7 @@ module.exports = function(Tweet) {
     Follow.find({
       where: {
         username: currentUser,
+        isFollowing: true,
       },
     })
     .then(function(follows) {
