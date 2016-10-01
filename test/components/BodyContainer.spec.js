@@ -30,6 +30,7 @@ describe('BodyContainer', () => {
         isLogin: false,
         name: '',
         username: '',
+        token: '',
       },
     }
     wrapper = reduxMount(<BodyContainer {...props} />, state)
