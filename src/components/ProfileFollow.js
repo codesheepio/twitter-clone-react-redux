@@ -1,11 +1,27 @@
 import React from 'react'
+import classnames from 'classnames'
 
 class ProfileFollow extends React.Component {
   render() {
+    const btnClass = classnames('btn btn-lg', {
+      'btn-danger': this.props.isFollowing,
+      'btn-default': !this.props.isFollowing,
+    })
+
     const followToggleBtn = this.props.isFollowing ?
-      <input type="button" className="btn btn-danger btn-lg" value="Unfollow" />
+      <input
+        type="button"
+        className={btnClass}
+        value="Unfollow"
+        onClick={this.props.handleToggleFollow}
+      />
       :
-      <input type="button" className="btn btn-default btn-lg" value="Follow" />
+      <input
+        type="button"
+        className={btnClass}
+        value="Follow"
+        onClick={this.props.handleToggleFollow}
+      />
 
     return (
       <div className="action last-section">
@@ -17,6 +33,7 @@ class ProfileFollow extends React.Component {
 
 ProfileFollow.propTypes = {
   isFollowing: React.PropTypes.bool,
+  handleToggleFollow: React.PropTypes.func.isRequired,
 }
 
 ProfileFollow.defaultProps = {

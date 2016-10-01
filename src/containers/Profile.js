@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Profile from '../components/Profile'
 import { fetchNumFollowers, fetchNumFollowings } from '../actions/profile'
-import { getFollowStatus } from '../actions/follow'
+import { getFollowStatus, follow, unfollow } from '../actions/follow'
 
 const mapStateToProps = state => ({
   name: state.router.params.username ? state.profile.name : state.auth.name,
@@ -13,9 +13,10 @@ const mapStateToProps = state => ({
   numFollowings: state.profile.numFollowings,
   isOwnProfile: !state.router.params.username ||
     state.router.params.username === state.auth.username,
+  token: state.auth.token,
 })
 
 export default connect(
   mapStateToProps,
-  { fetchNumFollowers, fetchNumFollowings, getFollowStatus }
+  { fetchNumFollowers, fetchNumFollowings, getFollowStatus, follow, unfollow }
 )(Profile)
