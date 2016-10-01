@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const NavBar = ({ isLogin, goToLogin, goToSignup, logout }) => {
   const handleLoginClick = () => {
@@ -40,7 +41,7 @@ const NavBar = ({ isLogin, goToLogin, goToSignup, logout }) => {
             <span className="icon-bar" />
             <span className="icon-bar" />
           </button>
-          <a className="navbar-brand" href="/">Twister</a>
+          <Link to="/" className="navbar-brand">Twister</Link>
         </div>
         { authComponent }
       </div>
