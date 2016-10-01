@@ -1,5 +1,5 @@
 import React from 'react'
-import { expect, mount } from '../test-helper'
+import { expect, mount, sinon } from '../test-helper'
 import Profile from '../../src/components/Profile'
 import ProfileHeader from '../../src/components/ProfileHeader'
 import ProfileDetail from '../../src/components/ProfileDetail'
@@ -15,6 +15,8 @@ describe('Profile', () => {
       numTweets: 1337,
       numFollowers: 400,
       numFollowings: 555,
+      fetchNumFollowers: sinon.spy(),
+      fetchNumFollowings: sinon.spy(),
     }
     wrapper = mount(<Profile {...props} />)
   })

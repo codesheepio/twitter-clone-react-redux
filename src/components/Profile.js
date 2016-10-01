@@ -2,16 +2,30 @@ import React from 'react'
 import ProfileHeader from './ProfileHeader'
 import ProfileDetail from './ProfileDetail'
 
-const Profile = props => (
-  <div className="profile">
-    <ProfileHeader name={props.name} username={props.username} />
-    <ProfileDetail
-      numTweets={props.numTweets}
-      numFollowers={props.numFollowers}
-      numFollowings={props.numFollowings}
-    />
-  </div>
-)
+class Profile extends React.Component {
+  componentDidMount() {
+    this.props.fetchNumFollowers(this.props.username)
+    this.props.fetchNumFollowings(this.props.username)
+  }
+
+  componentWillUpdate(nextProps) {
+    this.props.fetchNumFollowers(nextProps.username)
+    this.props.fetchNumFollowings(nextProps.username)
+  }
+
+  render() {
+    return (
+      <div className="profile">
+        <ProfileHeader name={this.props.name} username={this.props.username} />
+        <ProfileDetail
+          numTweets={this.props.numTweets}
+          numFollowers={this.props.numFollowers}
+          numFollowings={this.props.numFollowings}
+        />
+      </div>
+    )
+  }
+}
 
 Profile.propTypes = {
   name: React.PropTypes.string.isRequired,
@@ -19,6 +33,8 @@ Profile.propTypes = {
   numTweets: React.PropTypes.number.isRequired,
   numFollowers: React.PropTypes.number.isRequired,
   numFollowings: React.PropTypes.number.isRequired,
+  fetchNumFollowers: React.PropTypes.func.isRequired,
+  fetchNumFollowings: React.PropTypes.func.isRequired,
 }
 
 export default Profile

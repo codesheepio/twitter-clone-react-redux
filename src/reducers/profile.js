@@ -17,6 +17,18 @@ const profileReducer = (state = initialState, action) => {
         username: action.payload.username,
       }
     }
+    case types.FETCH_NUM_FOLLOWERS_SUCCESS: {
+      return {
+        ...state,
+        numFollowers: action.payload.numFollowers,
+      }
+    }
+    case types.FETCH_NUM_FOLLOWINGS_SUCCESS: {
+      return {
+        ...state,
+        numFollowings: action.payload.numFollowings,
+      }
+    }
     default:
       return state
   }
