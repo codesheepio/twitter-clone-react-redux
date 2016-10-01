@@ -12,10 +12,11 @@ class Profile extends React.Component {
   componentWillUpdate(nextProps) {
     this.props.fetchNumFollowers(nextProps.username)
     this.props.fetchNumFollowings(nextProps.username)
+    this.props.getFollowStatus(nextProps.authUsername, nextProps.username)
   }
 
   render() {
-    const showProfileFollow = this.props.isOwnProfile ? '' : <ProfileFollow />
+    const showProfileFollow = this.props.isOwnProfile ? '' : <ProfileFollow isFollowing={this.props.isFollowing} />
 
     return (
       <div className="profile">
@@ -38,8 +39,10 @@ Profile.propTypes = {
   numTweets: React.PropTypes.number.isRequired,
   numFollowers: React.PropTypes.number.isRequired,
   numFollowings: React.PropTypes.number.isRequired,
+  isFollowing: React.PropTypes.bool.isRequired,
   fetchNumFollowers: React.PropTypes.func.isRequired,
   fetchNumFollowings: React.PropTypes.func.isRequired,
+  getFollowStatus: React.PropTypes.func.isRequired,
   isOwnProfile: React.PropTypes.bool.isRequired,
 }
 

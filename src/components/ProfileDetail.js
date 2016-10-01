@@ -30,7 +30,7 @@ ProfileDetail.propTypes = {
   isLastSection: React.PropTypes.bool,
 }
 
-ProfileDetail.propTypes = {
+ProfileDetail.defaultProps = {
   isLastSection: false,
 }
 

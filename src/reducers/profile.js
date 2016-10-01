@@ -3,6 +3,7 @@ import types from '../actions/types'
 const initialState = {
   name: 'N/A',
   username: 'notavailable',
+  isFollowing: false,
   numTweets: 0,
   numFollowers: 0,
   numFollowings: 0,
@@ -27,6 +28,12 @@ const profileReducer = (state = initialState, action) => {
       return {
         ...state,
         numFollowings: action.payload.numFollowings,
+      }
+    }
+    case types.SET_FOLLOW_STATE: {
+      return {
+        ...state,
+        isFollowing: action.payload.isFollowing,
       }
     }
     case types.LOGOUT: {
