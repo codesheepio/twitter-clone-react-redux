@@ -50,6 +50,6 @@ module.exports = function(Tweet) {
   Tweet.remoteMethod('homeFeed', {
     http: { path: '/homefeed', verb: 'get' },
     accepts: { arg: 'req', type: 'object', required: true, http: { source: 'req' } },
-    returns: { arg: 'feed', type: ["object"] },
+    returns: { arg: 'feed', type: ["object"], root: true },
   })
 };
