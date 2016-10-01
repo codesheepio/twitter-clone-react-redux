@@ -14,6 +14,7 @@ describe('NewTweet', () => {
       numFollowers: 500,
       numFollowings: 700,
       addTweet: sinon.spy(),
+      token: 'mock_token',
     }
     wrapper = mount(<NewTweet {...props} />)
   })
@@ -59,7 +60,7 @@ describe('NewTweet', () => {
     wrapper.find('#tweetText').simulate('change', { target: { value: 'Hello' } })
     wrapper.find('input.btn').simulate('click')
 
-    expect(props.addTweet).to.have.been.calledWith('Supasate Choochaisri', 'kaizerwing', 'Hello', fakedTime)
+    expect(props.addTweet).to.have.been.calledWith('Supasate Choochaisri', 'kaizerwing', 'Hello', props.token)
 
     clock.restore()
   })
