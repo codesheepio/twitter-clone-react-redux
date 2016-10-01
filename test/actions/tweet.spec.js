@@ -11,7 +11,7 @@ describe('Tweet actions', () => {
 
   it('create ADD_TWEET action', () => {
     nock('http://localhost:3000/')
-      .post('/api/Tweets')
+      .post('/api/Tweets?access_token=mock_token')
       .reply(200, {
         id: 123,
         name: 'Supasate Choochaisri',
@@ -37,7 +37,7 @@ describe('Tweet actions', () => {
     const mockStore = configureMockStore([thunk])
     const store = mockStore({ tweets: [] })
 
-    return store.dispatch(addTweet('Supasate Choochaisri', 'kaizerwing', 'Hello World', 1431531241))
+    return store.dispatch(addTweet('Supasate Choochaisri', 'kaizerwing', 'Hello World', 'mock_token'))
       .then(() => {
         expect(store.getActions()).to.deep.equal(expectedActions)
       })
