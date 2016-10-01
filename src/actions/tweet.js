@@ -78,6 +78,17 @@ const fetchTweets = username => (dispatch) => {
     })
 }
 
+const fetchHomeFeed = token => (dispatch) => {
+  dispatch(fetchInProgress())
+
+  const uri = `http://localhost:3000/api/Tweets/homefeed?access_token=${token}`
+  fetch(uri)
+    .then(response => response.json())
+    .then((tweets) => {
+      dispatch(fetchSuccess(tweets))
+    })
+}
+
 export {
   addTweet,
   addTweetInProgress,
@@ -86,4 +97,5 @@ export {
   fetchInProgress,
   fetchSuccess,
   fetchTweets,
+  fetchHomeFeed,
 }
