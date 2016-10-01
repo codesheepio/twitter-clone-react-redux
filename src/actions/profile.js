@@ -47,7 +47,7 @@ const fetchNumFollowersFail = err => ({
 const fetchNumFollowers = username => (dispatch) => {
   dispatch(fetchNumFollowersInProgress())
 
-  const uri = `http://localhost:3000/api/Follows/count?where={"followedUsername":"${username}"}`
+  const uri = `http://localhost:3000/api/Follows/count?where={"followedUsername":"${username}","isFollowing":true}`
   fetch(uri)
   .then((response) => {
     if (!response.ok) {
@@ -79,7 +79,7 @@ const fetchNumFollowingsFail = err => ({
 const fetchNumFollowings = username => (dispatch) => {
   dispatch(fetchNumFollowingsInProgress())
 
-  const uri = `http://localhost:3000/api/Follows/count?where={"username":"${username}"}`
+  const uri = `http://localhost:3000/api/Follows/count?where={"username":"${username}","isFollowing":true}`
   fetch(uri)
   .then((response) => {
     if (!response.ok) {
