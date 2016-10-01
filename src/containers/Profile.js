@@ -8,6 +8,8 @@ const mapStateToProps = state => ({
   numTweets: state.profile.numTweets,
   numFollowers: state.profile.numFollowers,
   numFollowings: state.profile.numFollowings,
+  isOwnProfile: !state.router.params.username ||
+    state.router.params.username === state.auth.username,
 })
 
 export default connect(mapStateToProps, { fetchNumFollowers, fetchNumFollowings })(Profile)

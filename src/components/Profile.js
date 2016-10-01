@@ -1,6 +1,7 @@
 import React from 'react'
 import ProfileHeader from './ProfileHeader'
 import ProfileDetail from './ProfileDetail'
+import ProfileFollow from './ProfileFollow'
 
 class Profile extends React.Component {
   componentDidMount() {
@@ -14,6 +15,8 @@ class Profile extends React.Component {
   }
 
   render() {
+    const showProfileFollow = this.props.isOwnProfile ? '' : <ProfileFollow />
+
     return (
       <div className="profile">
         <ProfileHeader name={this.props.name} username={this.props.username} />
@@ -21,7 +24,9 @@ class Profile extends React.Component {
           numTweets={this.props.numTweets}
           numFollowers={this.props.numFollowers}
           numFollowings={this.props.numFollowings}
+          isLastSection={this.props.isOwnProfile}
         />
+        { showProfileFollow }
       </div>
     )
   }
@@ -35,6 +40,7 @@ Profile.propTypes = {
   numFollowings: React.PropTypes.number.isRequired,
   fetchNumFollowers: React.PropTypes.func.isRequired,
   fetchNumFollowings: React.PropTypes.func.isRequired,
+  isOwnProfile: React.PropTypes.bool.isRequired,
 }
 
 export default Profile
