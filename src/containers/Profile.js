@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
   username: state.router.params.username ? state.profile.username : state.auth.username,
   authUsername: state.auth.username,
   isFollowing: state.profile.isFollowing,
-  numTweets: state.profile.numTweets,
+  numTweets: state.router.params.username ? state.tweets.length :
+    state.tweets.filter(tweet => tweet.username === state.auth.username).length,
   numFollowers: state.profile.numFollowers,
   numFollowings: state.profile.numFollowings,
   isOwnProfile: !state.router.params.username ||
