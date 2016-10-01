@@ -27,6 +27,9 @@ const reducer = (state = initialState, action) => {
         return 0
       })
     }
+    case types.LOGOUT: {
+      return []
+    }
     default:
       return state
   }

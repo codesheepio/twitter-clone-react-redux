@@ -29,6 +29,9 @@ const profileReducer = (state = initialState, action) => {
         numFollowings: action.payload.numFollowings,
       }
     }
+    case types.LOGOUT: {
+      return initialState
+    }
     default:
       return state
   }
