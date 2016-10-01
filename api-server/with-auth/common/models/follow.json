@@ -13,6 +13,10 @@
     "followedUsername": {
       "type": "string",
       "required": true
+    },
+    "isFollowing": {
+      "type": "boolean",
+      "required": true
     }
   },
   "validations": [],
