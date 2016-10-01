@@ -68,12 +68,13 @@ NewTweet.propTypes = {
   firstItem: React.PropTypes.bool,
   name: React.PropTypes.string.isRequired,
   username: React.PropTypes.string.isRequired,
-  token: React.PropTypes.string.isRequired,
+  token: React.PropTypes.string,
   addTweet: React.PropTypes.func.isRequired,
 }
 
 NewTweet.defultProps = {
   firstItem: false,
+  token: '',
 }
 
 export default NewTweet
