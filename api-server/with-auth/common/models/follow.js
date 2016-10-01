@@ -1,5 +1,4 @@
 module.exports = function(Follow) {
-  Follow.disableRemoteMethod('count', true);
   Follow.disableRemoteMethod('exists', true);
   Follow.disableRemoteMethod('upsert', true);
   Follow.disableRemoteMethod('replaceById', true);
