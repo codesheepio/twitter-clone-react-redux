@@ -12,5 +12,4 @@ module.exports = function(Follow) {
   Follow.disableRemoteMethod('__updateById__accessTokens', false);
   Follow.disableRemoteMethod('createChangeStream', true);
   Follow.disableRemoteMethod('replaceOrCreate', true);
-  Follow.disableRemoteMethod('upsertWithWhere', true);
 };
