@@ -1,5 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
+import { Link } from 'react-router'
 
 const Tweet = (props) => {
   const tweetClass = classnames({
@@ -9,7 +10,7 @@ const Tweet = (props) => {
   return (
     <div className={tweetClass}>
       <div className="name">{props.name}</div>
-      <div className="screen-name">@{props.username}</div>
+      <div className="screen-name"><Link to={`/${props.username}`}>@{props.username}</Link></div>
       <div className="tweet-text">{props.tweetText}</div>
     </div>
   )
