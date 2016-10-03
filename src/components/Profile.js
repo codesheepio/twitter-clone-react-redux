@@ -14,10 +14,10 @@ class Profile extends React.Component {
     this.props.fetchNumFollowings(this.props.username)
   }
 
-  componentWillUpdate(nextProps) {
-    this.props.fetchNumFollowers(nextProps.username)
-    this.props.fetchNumFollowings(nextProps.username)
-    this.props.getFollowStatus(nextProps.authUsername, nextProps.username)
+  componentDidUpdate() {
+    this.props.fetchNumFollowers(this.props.username)
+    this.props.fetchNumFollowings(this.props.username)
+    this.props.getFollowStatus(this.props.authUsername, this.props.username)
   }
 
   toggleFollow() {
