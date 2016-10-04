@@ -72,7 +72,7 @@ NewTweet.propTypes = {
   addTweet: React.PropTypes.func.isRequired,
 }
 
-NewTweet.defultProps = {
+NewTweet.defaultProps = {
   firstItem: false,
   token: '',
 }
