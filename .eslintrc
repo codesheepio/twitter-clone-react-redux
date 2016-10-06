@@ -19,5 +19,6 @@
     "react/prefer-stateless-function": "off",
     "react/require-extension": "off",
     "semi": ["error", "never"],
+     "eol-last": "off",
   }
 }
